@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <algorithm>
 #include <cstring>
-#define max 0x7FFFFFFF
+#define max 0x3f3f3f3f
 int w[1005];
 int r[1005];
 int min(int a ,int b)
