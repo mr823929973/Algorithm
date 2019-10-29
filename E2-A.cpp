@@ -1,18 +1,24 @@
-#include <iostream>
+#include<iostream>
+#include<algorithm>
 #include<cstring>
-const int maxn = 50000;
-long long n, W, w[maxn], v[maxn], f[maxn];
-int main() {
-  while(std::cin >> n >> W)
-  {
-  for (int i = 1; i <= n; i++) std::cin >> w[i] >> v[i];
-  for (int i = 1; i <= n; i++)
-    for (int l = W; l >= w[i]; l--)
-      if (f[l - w[i]] + v[i] > f[l]) f[l] = f[l - w[i]] + v[i];
-  std::cout << f[W]<<std::endl;
-  memset(w,0,maxn*sizeof(long long));
-  memset(v,0,maxn*sizeof(long long));
-  memset(f,0,maxn*sizeof(long long));
-  }
-  return 0;
+int dp[30005]={};
+int c[505];
+int va[505];
+int main()
+{
+	int n,v,i,j;
+    while(std::cin>>n>>v)
+    {
+      	for(i=1;i<=n;i++)
+			std::cin>>c[i]>>va[i];
+		for(i=1;i<=n;i++)
+			for(j=v;j>=0;j--)
+			{
+				if(j-c[i]>=0)
+				dp[j]=std::max(dp[j],dp[j-c[i]]+va[i]);
+			}
+		std::cout<<dp[v]<<'\n';
+		memset(dp,0,4*30005);
+    }
+	return 0;
 }
