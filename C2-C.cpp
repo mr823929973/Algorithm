@@ -4,11 +4,11 @@
 #define max 0x3f3f3f3f
 int w[1005];
 int r[1005];
-int min(int a ,int b)
+/*int min(int a ,int b)
 {
     if(a<=b) return a;
     else return b;
-}
+}*/
 int main()
 {
     int n,i,j,tmp;
@@ -21,7 +21,7 @@ int main()
             tmp=max;
             for(j=1;j<=i;j++)
             {
-                tmp=min(tmp,w[j]+r[i-j]);
+                tmp=std::min(tmp,w[j]+r[i-j]);
             }
             r[i]=tmp;
         }
