@@ -21,7 +21,6 @@ int main()
         memset(s2,0,sizeof(s2));
         scanf("%s%s",s1,s2);
         n=strlen(s1);
-        n--;
         for(i=0;i<n;i++)
         {
             if(s1[i]=='0') 
